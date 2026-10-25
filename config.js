@@ -1,0 +1,1 @@
+window.KONFORME_CONFIG = { supabaseUrl: 'https://bnlunucirsgbodbamtaa.supabase.co', supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJubHVudWNpcnNnYm9kYmFtdGFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5MzU2MzksImV4cCI6MjA5MTUxMTYzOX0.Q29GZsidQzN2Gn30bJR75MjRwweK-4v7gCJ3CezexFw' }

@@ -1,0 +1,123 @@
+/* Charte du site Konforme (conversation « Site internet Konforme ») :
+   bleu marine, sarcelle, police Plus Jakarta Sans, hebergee ici. */
+@font-face { font-family: 'Plus Jakarta Sans'; font-weight: 400; font-display: swap; src: url('/assets/fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Plus Jakarta Sans'; font-weight: 500; font-display: swap; src: url('/assets/fonts/plus-jakarta-sans-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Plus Jakarta Sans'; font-weight: 600; font-display: swap; src: url('/assets/fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Plus Jakarta Sans'; font-weight: 700; font-display: swap; src: url('/assets/fonts/plus-jakarta-sans-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Plus Jakarta Sans'; font-weight: 800; font-display: swap; src: url('/assets/fonts/plus-jakarta-sans-latin-800-normal.woff2') format('woff2'); }
+
+:root {
+  --navy: #1a3a5c;
+  --navy-deep: #0f2440;
+  --navy-light: #2a5a8c;
+  --teal: #0d9488;
+  --teal-light: #ccfbf1;
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  --red: #ef4444;
+  --red-deep: #b91c1c;
+  --red-light: #fee2e2;
+  --orange: #f59e0b;
+  --green: #16a34a;
+  --green-light: #dcfce7;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 12px 48px rgba(15, 36, 64, 0.12);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--gray-800);
+  background: var(--off-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 16px 32px;
+  -webkit-font-smoothing: antialiased;
+}
+.logo { width: 240px; max-width: 70vw; height: auto; margin-bottom: 32px; }
+.carte {
+  width: 100%;
+  max-width: 440px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-lg);
+}
+.etat { display: none; }
+.etat.actif { display: block; }
+.icone {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px; font-size: 26px; font-weight: 800;
+}
+.icone.ok { background: var(--green-light); color: var(--green); }
+.icone.erreur { background: var(--red-light); color: var(--red-deep); }
+.icone.cle { background: var(--teal-light); color: var(--teal); }
+h1 { font-size: 1.45rem; font-weight: 800; color: var(--navy-deep); text-align: center; margin-bottom: 8px; line-height: 1.25; }
+.sous-titre { color: var(--gray-600); text-align: center; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
+label { display: block; font-weight: 600; font-size: 0.9rem; color: var(--navy); margin: 18px 0 8px; }
+.champ { position: relative; }
+.champ input {
+  width: 100%;
+  padding: 14px 92px 14px 16px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--off-white);
+  transition: border-color 0.2s;
+}
+.champ input:focus { outline: none; border-color: var(--navy); background: var(--white); }
+.champ input.erreur { border-color: var(--red); }
+.afficher {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: var(--navy-light);
+  font-family: inherit; font-size: 0.85rem; font-weight: 600;
+  padding: 8px; cursor: pointer;
+}
+.force { margin-top: 10px; }
+.force-barres { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.force-barres span { height: 5px; border-radius: 3px; background: var(--gray-200); transition: background 0.2s; }
+.force-texte { font-size: 0.8rem; color: var(--gray-600); margin-top: 6px; min-height: 1.2em; }
+.aide { font-size: 0.8rem; color: var(--gray-400); margin-top: 6px; }
+.message-erreur { color: var(--red-deep); font-size: 0.85rem; margin-top: 8px; min-height: 1.2em; }
+.bouton {
+  display: block; width: 100%;
+  margin-top: 24px; padding: 15px;
+  border: none; border-radius: 50px;
+  background: var(--navy); color: var(--white);
+  font-family: inherit; font-size: 1rem; font-weight: 700;
+  text-align: center; text-decoration: none; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(26, 58, 92, 0.25);
+  transition: background 0.2s;
+}
+.bouton:hover { background: var(--navy-deep); }
+.bouton:disabled { opacity: 0.6; cursor: default; }
+.bouton.secondaire { background: var(--white); color: var(--navy); border: 2px solid var(--navy); box-shadow: none; margin-top: 12px; }
+.cache { display: none !important; }
+.texte-page { max-width: 760px; }
+.texte-page p { color: var(--gray-600); line-height: 1.7; margin-bottom: 12px; }
+footer { margin-top: 32px; font-size: 0.85rem; color: var(--gray-400); text-align: center; }
+footer a { color: var(--gray-600); }
+
+/* Pages de texte (mentions legales, confidentialite). */
+.carte.texte-page { max-width: 760px; padding: 40px 32px; }
+.texte-page h1 { text-align: left; margin-bottom: 4px; }
+.texte-page .maj { color: var(--gray-400); font-size: 0.85rem; margin-bottom: 24px; }
+.texte-page h2 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 28px 0 10px; }
+.texte-page p, .texte-page li { color: var(--gray-600); line-height: 1.7; font-size: 0.95rem; }
+.texte-page p { margin-bottom: 10px; }
+.texte-page ul { margin: 0 0 12px 20px; }
+.texte-page li { margin-bottom: 6px; }
+.texte-page a { color: var(--navy-light); }
+.texte-page strong { color: var(--gray-800); }
+.retour { display: inline-block; margin-bottom: 24px; color: var(--navy-light); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+a.logo-lien { display: block; }
